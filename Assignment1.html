@@ -125,6 +125,103 @@ body {
     <h2>Advice</h2>
     <p>Some text..</p>
       <img src="AmsterdamRoute.png" width="400" height="245">
+   
+<h2>References</h2>
+  
+  <h3>The event can’t have an impact on commercial water transport.</h3>
+
+<h5>In our definition of (commercial) water transport, we include commercial deliveries and cargo, as well as construction boats, points of loaden and unloading, and the ferries.</h5>
+
+    <ul style="list-style-type: square;">
+        <li>Ferry’s operate on the IJ, which excludes this from the swimming route. https://reisinfo.gvb.nl/nl/lijnen?boat&show
+           <ul>
+                 <li>This geodata is not downloadable. The geospatial data is represented through points and lines.</li>
+             </ul>
+        </li>
+     <br> 
+
+      <li>The same is true for commercial transport by boat. However, besides the IJ, commercial water transport passes through the Amstel and from the Amstel through the Westerdok. https://www.pdok.nl/atom-downloadservices/-/article/vaarweg-informatie-nederland-vin- 
+           <ul>
+                 <li>The geodata can be downloaded in gpkg format. It is geospatial data, where the data is represented geometrically through lines. </li>
+                 <li>There are different libraries to read this data type, such as geopandas and Fiona. </li>
+             </ul>
+        </li>
+
+     <br> 
+       <li>The municipality of Amsterdam has spatial data of the boarding and disembarking points of water transport vessels. Because of this information, canals which less points can be included in the route, to avoid disruption. https://maps.amsterdam.nl/varen/
+           <ul>
+                 <li>This data can be downloaded in json and csv. There are human readable text files. The csv data is stored alphanumerical, with words and numbers. The geospatial data is represented through points. </li>
+                 <li>The csv data is readable in Python. Python also has a built-in package called json, which can be imported.</li>
+             </ul>
+        </li>
+        
+    </ul>	
+
+<h3>It would be appreciated if the event has small impact on the routes of the canal boats. </h3>
+<h5>To make sure the impact on canal boats is being minimalized, their location and routs need to be analyzed. </h5>
+    <ul style="list-style-type: square;">
+        <li>The municipality of Amsterdam has spatial data on the boarding and disembarking points of passenger shipping. https://maps.amsterdam.nl/varen/
+           <ul>
+                 <li>This data can be downloaded in json and csv. There are human readable text files. The csv data is stored alphanumerical, with words and numbers. The geospatial data is represented through points. </li>
+                 <li>The csv data is readable in Python. Python also has a built-in package called json, which can be imported.</li>
+             </ul>
+        </li>
+     <br> 
+      <li>There is no (accessible) spatial data on the routes of the canal boats. The boarding and disembarking points can give some indication. Additionally, the Grachtenmonitor 2022 (p.10, p. 13) gives insight in the locations with the most boat passings a day. 
+           <ul>
+                 <li>This geospatial data is only accessible through this map. Only the image can be used and analyzed, not the actual data.</li>
+             
+             </ul>
+        </li>
+
+     <br> 
+       <li> 
+           <ul>
+                 <li> </li>
+                 <li></li>
+             </ul>
+        </li>
+        
+    </ul>	
+
+<br>
+
+   <h3>What is the pollution level of the canals and is there data from all the canals? Are the canals monitored and can you swim there safely?  </h3>
+<h5>The route of the Amsterdam city swim is being monitored by Waternet during the year (Amsterdam City Swim, n.d.). However, only the quality of official swimming locations is being published regularly. The other data isn’t published online or anywhere and is private to Waternet.</h5>
+    <ul style="list-style-type: square;">
+        <li>There is a national database available with water quality results of official swimming locations. This can provides insights in the water quality of official swimming locations in Amsterdam. These locations can possibly be included in the route. https://www.pdok.nl/introductie/-/article/zwemwater-provinciaal-en-rijkswateren- 
+           <ul>
+                 <li>The geodata can be downloaded in gpkg format. It is geospatial data, where the data is represented geometrically through points. </li>
+                 <li>There are different libraries to read this data such as pygml and geopython.</li>
+                 <li>This is temporal data, with an interval of 14 days during the swimming season. </li>
+           </ul>
+        </li>
+     <br> 
+      <li> -	The municipality of Amsterdam provides spatial data on the location of the official swimming location. https://maps.amsterdam.nl/zwemwater/ 
+           <ul>
+                 <li>This data can be downloaded in json and csv. There are human readable text files. The csv data is stored alphanumerical, with words and numbers. The geospatial data is represented through points. </li>
+                 <li>The csv data is readable in Python. Python also has a built-in package called json, which can be imported.  </li>
+             </ul>
+        </li>
+
+     <br> 
+
+      <li>There is more specific data available of the water quality of some locations. This dates from 2019. https://onderzoek.amsterdam.nl/dataset/water-in-amsterdam
+           <ul>
+                 <li>This alphanumerical data set is stored in an excel file. This is no geospatial nor temporal data. </li>
+                 <li>The most used packages for working with excel files in Python is openpyxl. </li>
+             </ul>
+        </li>
+
+       <br> 
+       <li> -	Since overall data on the water quality of the canals is not (publicly) available, looking at the sewage system might be helpful. Mixed sewers can overflow in times of heavy rainfall, leading to unsafe swimming water. The location of mixed sewage systems is shown on this map: https://data.amsterdam.nl/data/   
+           <ul>
+                 <li>This geospatial data is not downloadable through this website. This geospatial data is represented through lines. </li>
+                 <li></li>
+             </ul>
+       </li>
+   
+    </ul>	
 
           <pre><code class="python">a = [2, 3, 5, 0, 9]
 b = [5, 6, 0, 7, 9]
