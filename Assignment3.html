@@ -173,7 +173,8 @@ body {
 
       # Total tourist tax
       total_tax = Airbnb_tax_week + direct_tax_week + indirect_tax_week
-      print(total_tax, "euro")</code></pre>
+      print(total_tax, "euro")
+      </code></pre>
 
 <h5>2. Plot the amount of AirBnB locations per neighborhood</h5>
         <p>With 1382 listings, the neighborhood ‘De Baarsjes – Oud West’ has the most AirBnB locations of all the Amsterdam neighborhoods. 
@@ -197,7 +198,8 @@ print(neighbourhood)
 fig = px.bar(neighbourhood, x='neighbourhood', y='count', title='number of AirBnB locations per neighbourhood in Amsterdam')
 fig.update_xaxes(title='neighbourhood')
 fig.update_yaxes(title='number of AirBnBs') 
-fig.show() </code></pre>
+fig.show() 
+</code></pre>
 
 <h5>3. Which street in Amsterdam has to most AirBnB apartments?</h5>
         <p>By using the latitude and longitude of the AirBnB listings in Amsterdam, a geolocator could be used to find out in which street the most AirBnB listings are located. 
@@ -225,7 +227,8 @@ location['street'] = location.apply(lambda row: get_street_from_location(row['la
 
 most_popular_location = location.sort_values(by='count', ascending=False).iloc[0]
 print("The street with the most Airbnb listings in Amsterdam is:", most_popular_location['street']) 
-print("Number of Airbnb listings in this street:", most_popular_location['count'])</code></pre>
+print("Number of Airbnb listings in this street:", most_popular_location['count'])
+</code></pre>
 
 <h5>4. Which number of apartments are not rented out all the time but are also used as normal housing?</h5>
         <p>8350 out of 8386 are not rented out all the time, which creates the expectation that these are also used as normal housing. 
@@ -256,7 +259,8 @@ bnb_data.hist(column='availability_365')
 plt.title("Availability Airbnbs Amsterdam") 
 plt.xlabel("Availability in Days") 
 plt.ylabel("Number of Apartments") 
-plt.show()</code></pre>
+plt.show()
+</code></pre>
 
         
 <h5>5. How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?</h5>
@@ -278,7 +282,8 @@ bnb_df['Beds'] = bnb_df['Beds'].str.extract('([\d.]+)').astype(float)
 print(bnb_df['Beds'])
 
 total_beds = int(bnb_df['Beds'].sum())
-print("Totaal aantal bedden:", total_beds)</code></pre>
+print("Totaal aantal bedden:", total_beds)
+</code></pre>
 
         
 <h5>6. How many different licenses are issued?</h5>
@@ -294,7 +299,8 @@ print(len(bnb_data))
 
 license_count = bnb_data['license'].value_counts()
 mostissued = license_count.max()
-print("The most issued license holder has", mostissued)</code></pre>
+print("The most issued license holder has", mostissued)
+</code></pre>
         
 <h2>Conclusion</h2>
 <p>It thus can be concluded that organizing a swimming contest through the Amsterdam canals would result in direct income for the municipality through tourist tax. 
