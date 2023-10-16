@@ -177,20 +177,120 @@ body {
         <p>With 1382 listings, the neighborhood ‘De Baarsjes – Oud West’ has the most AirBnB locations of all the Amsterdam neighborhoods. 
             The least number of listings, only 39, are found in ‘Bijlmer-Oost’. </p>
 
+<pre><code class="python">
+# Assignment 3.2
+
+import pandas as pd
+import plotly.express as px
+
+# Plot the amount of AirBnB locations per neighborhood
+bnb_data = pd.read_csv('listings.csv')
+
+neighbourhood = bnb_data['neighbourhood'].value_counts().reset_index()
+neighbourhood.columns = ['neighbourhood', 'count']
+print(neighbourhood)
+
+fig = px.bar(neighbourhood, x='neighbourhood', y='count', title='number of AirBnB locations per neighbourhood in Amsterdam')
+fig.update_xaxes(title='neighbourhood')
+fig.update_yaxes(title='number of AirBnBs') 
+fig.show()    
+</code></pre>
+
 <h5>3. Which street in Amsterdam has to most AirBnB apartments?</h5>
         <p>By using the latitude and longitude of the AirBnB listings in Amsterdam, a geolocator could be used to find out in which street the most AirBnB listings are located. 
               It turns out that Hagedoornplein in Amsterdam Noord is the street with the most Airbnb listings, with 12 AirBnB apartments.</p>
+
+<pre><code class="python">
+# Assignment 3.3
+# Which street in Amsterdam has the most AirBnB apartments?
+from geopy.geocoders import Nominatim
+import pandas as pd
+import os.path
+
+bnb_data = pd.read_csv('listings.csv')
+location = bnb_data.groupby(['latitude', 'longitude']).size().reset_index(name='count') 
+
+geolocator = Nominatim(user_agent="airbnb_geocoder") 
+def get_street_from_location(lat, lon):
+    try: 
+        location_info = geolocator.reverse((lat,lon), exactly_one=True) 
+        return location_info.address
+    except: 
+        return "N/A"
+
+location['street'] = location.apply(lambda row: get_street_from_location(row['latitude'], row['longitude']), axis=1) 
+
+most_popular_location = location.sort_values(by='count', ascending=False).iloc[0]
+print("The street with the most Airbnb listings in Amsterdam is:", most_popular_location['street']) 
+print("Number of Airbnb listings in this street:", most_popular_location['count'])
+</code></pre>
 
 <h5>4. Which number of apartments are not rented out all the time but are also used as normal housing?</h5>
         <p>8350 out of 8386 are not rented out all the time, which creates the expectation that these are also used as normal housing. 
               This means that only 36 listings are available all year. Most are rarely ever available, or only for a couple of nights a year. 
               This was expected due to Amsterdam’s AirBnB regulations.</p>
 
+<pre><code class="python">
+# Assignment 3.4
+# Which number of apartments are not rented out all the time?
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# General information
+bnb_data.describe()
+
+treshold = 365
+availability = bnb_data[bnb_data['availability_365']<treshold] 
+housing = availability.shape[0]
+print("Number of apartments used as normal housing:", housing)
+
+gem_availability = bnb_data['availability_365'].mean()
+print("Gemiddelde beschikbaarheid per jaar:", gem_availability)
+
+bnb_data.hist(column='availability_365') 
+plt.title("Availability Airbnbs Amsterdam") 
+plt.xlabel("Availability in Days") 
+plt.ylabel("Number of Apartments") 
+plt.show()
+</code></pre>
+
  <h5>5. How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?</h5>
         <p>The Airbnb apartments have 14713 beds. This would translate into the same amount of hotel rooms if these were double beds. Otherwise, this would be around 7500 hotel rooms.</p>
 
+<pre><code class="python">
+# Assignment 3.5
+# How many hotel rooms should be built to accommodate Airbnb tourists
+
+bnb_df = pd.read_csv('listings.csv') 
+split_name = bnb_df['name'].str.split('·', expand=True)
+split_name.columns = ['Property', 'Rating', 'Bedrooms', 'Beds', 'Baths']
+bnb_df = pd.concat([bnb_df, split_name], axis=1)
+print(bnb_df)
+
+print(bnb_df['Beds'])
+bnb_df['Beds'] = bnb_df['Beds'].str.extract('([\d.]+)').astype(float)
+print(bnb_df['Beds'])
+
+total_beds = int(bnb_df['Beds'].sum())
+print("Totaal aantal bedden:", total_beds)
+</code></pre>
+        
 <h5>6. How many different licenses are issued?</h5>
         <p>The 8386 Airbnb apartments of this database are divided between 7288 different licenses. The most issued license holder has 609 Airbnbs.</p>
+
+<pre><code class="python">
+# Assignment 3.6
+# How many different licenses are issued?
+
+licenses = bnb_data['license'].nunique()
+print("Number of different licenses issued:", licenses)
+print(len(bnb_data))
+
+license_count = bnb_data['license'].value_counts()
+mostissued = license_count.max()
+print("The most issued license holder has", mostissued)
+</code></pre>
         
     <h2>Conclusion</h2>
 <p>It thus can be concluded that organizing a swimming contest through the Amsterdam canals would result in direct income for the municipality through tourist tax. 
