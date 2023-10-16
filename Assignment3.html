@@ -238,25 +238,25 @@ print("Number of Airbnb listings in this street:", most_popular_location['count'
 <img src="Availability.png">
         
 <pre><code class="python">
-      # Assignment 3.4
-      # Which number of apartments are not rented out all the time?
+# Assignment 3.4
+# Which number of apartments are not rented out all the time?
 
-      import pandas as pd
-      import matplotlib.pyplot as plt
+import pandas as pd
+import matplotlib.pyplot as plt
 
-      treshold = 365
-      availability = bnb_data['availability_365']<365]
-      housing = availability.shape[0]
-      print("Number of apartments used as normal housing:", housing)
+grens = 365
+availability = bnb_data['availability_365']<grens]
+housing = availability.shape[0]
+print("Number of apartments used as normal housing:", housing)
 
-      gem_availability = bnb_data['availability_365'].mean()
-      print("Gemiddelde beschikbaarheid per jaar:", gem_availability)
+gem_availability = bnb_data['availability_365'].mean()
+print("Gemiddelde beschikbaarheid per jaar:", gem_availability)
 
-      bnb_data.hist(column='availability_365') 
-      plt.title("Availability Airbnbs Amsterdam") 
-      plt.xlabel("Availability in Days") 
-      plt.ylabel("Number of Apartments") 
-      plt.show()     
+bnb_data.hist(column='availability_365') 
+plt.title("Availability Airbnbs Amsterdam") 
+plt.xlabel("Availability in Days") 
+plt.ylabel("Number of Apartments") 
+plt.show()     
 </code></pre>
  
 <h5>5. How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?</h5>
