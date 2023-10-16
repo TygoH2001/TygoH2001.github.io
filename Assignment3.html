@@ -245,11 +245,8 @@ print("Number of Airbnb listings in this street:", most_popular_location['count'
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# General information
-bnb_data.describe()
-      
 treshold = 365
-availability = bnb_data[bnb_data['availability_365']<treshold]
+availability = bnb_data['availability_365']<treshold]
 housing = availability.shape[0]
 print("Number of apartments used as normal housing:", housing)
 
@@ -285,8 +282,7 @@ print(bnb_df['Beds'])
 total_beds = int(bnb_df['Beds'].sum())
 print("Totaal aantal bedden:", total_beds)
 </code></pre>
-
-        
+   
 <h5>6. How many different licenses are issued?</h5>
       <p>The 8386 Airbnb apartments of this database are divided between 7288 different licenses. The most issued license holder has 609 Airbnbs.</p>
     
