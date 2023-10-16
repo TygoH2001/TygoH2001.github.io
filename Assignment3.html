@@ -250,11 +250,13 @@ bnb_data.hist(column='availability_365')
 plt.title("Availability Airbnbs Amsterdam") 
 plt.xlabel("Availability in Days") 
 plt.ylabel("Number of Apartments") 
-plt.show() </code></pre>
+plt.show()</code></pre>
 
+        
 <h5>5. How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?</h5>
       <p>The Airbnb apartments have 14713 beds. This would translate into the same amount of hotel rooms if these were double beds. Otherwise, this would be around 7500 hotel rooms.</p>
 
+        
 <pre><code class="python">
 # Assignment 3.5
 # How many hotel rooms should be built to accommodate Airbnb tourists
@@ -271,10 +273,12 @@ print(bnb_df['Beds'])
 
 total_beds = int(bnb_df['Beds'].sum())
 print("Totaal aantal bedden:", total_beds)</code></pre>
-      
+
+        
 <h5>6. How many different licenses are issued?</h5>
       <p>The 8386 Airbnb apartments of this database are divided between 7288 different licenses. The most issued license holder has 609 Airbnbs.</p>
 
+        
 <pre><code class="python">
 # Assignment 3.6
 # How many different licenses are issued?
@@ -286,11 +290,12 @@ print(len(bnb_data))
 license_count = bnb_data['license'].value_counts()
 mostissued = license_count.max()
 print("The most issued license holder has", mostissued) </code></pre>
+
         
 <h2>Conclusion</h2>
 <p>It thus can be concluded that organizing a swimming contest through the Amsterdam canals would result in direct income for the municipality through tourist tax. 
       This could potentially cover some of the costs. To welcome all tourists, spreading them across different neighborhoods and types of accommodations is necessary. 
-      This is why focus here is placed on AirBnB as a type of accommodation, next to traditional hotels. </p>
+      This is why focus here is placed on AirBnB as a type of accommodation, next to traditional hotels.</p>
         
 <h2>References</h2>
 <p>City of Amsterdam (n.d.). Tourist tax (toeristenbelasting). https://www.amsterdam.nl/veelgevraagd/toeristenbelasting-2c7c2#</p>
