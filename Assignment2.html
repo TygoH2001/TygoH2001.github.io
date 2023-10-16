@@ -120,20 +120,50 @@ body {
 <div class="row">
   <div class="main">
     <h2>Assignment 2 - Energy</h2>
-    <p>For the data 1 we made this ...</p>
-    <br>
+    <p> The Municipality is worried that the canal- and support boats might pollute the air with their diesel engines. Since the Municipality wants to create ideal condi􀆟ons for the swimmers so they can set records (always nice for PR), it is your task to figure out if their concern is warranted and what should or could be done to improve condi􀆟ons. Next to that, Amsterdam wants to adver􀆟se this event as a Neutral Energy Event©™® (NEE).   </p>
+   
+    <h3> 1) How many of the canal boats currently in use are diesel/fossil fuel driven and how many boats are electrical driven? </h3>    
+      <p> Amsterdam wants to ban diesel engines from the centre's canals by 2025 completely. In 2022, approximately 33% of the 7350 registered vessels in Amsterdam were already fully or partly emission-free. That is a total of 2453 boats. Note: hybrid boats are only allowed to use their electric motor inside Amsterdam’s city center and are therefore considered electrically driven for this calculation. </p>
+            
+<pre><code class="python">
+      # How much is 33% of the 7350 registered vessels?
+      
+      number_boats = 7350
+      percentage_electric = 33
+      
+      electric_boats = (percentage_electric / 100) * number_boats
+      
+      print(electric_boats)
+</code></pre>
+
+<p> Of the recreational boats, mostly privately-owned, only 5 % are emissions-free. Of the 550 commercial vessels, including tourist focused canal boats, 75 % were already emission free in 2020. However, these make up only 7,5 % of all registered boats </p>
+   
+  <pre><code class="python">
+      #550 boats out of 7350 are commercial vessels - percentage?
+
+      number_commercial = 550
+
+      percentage_commercial = (100/number_boats) * number_commercial
+
+      print(percentage_commercial)
+</code></pre>
+
+        
+      <h3>Are there peak times for the canal boats? </h3>    
+      <p> Yes, between 15-18h. </p>
+            
+      <h3>Try to compare the energy use of the canal boats to some other activities in the city. Use canal boats more or less energy in relation to their carbon footprint compared to these other activities? </h3>
+      <p> It is very difficult to compare the energy use of electric boats to other activities 	because there is not much data publicly available. Also, the periods of use, purposes of use and boat models differ a lot. 
+
+            We found that the CO2 emissions of canal boats in Amsterdam are included within inland shipping numbers. Inland shipping is responsible for 2% of the CO2 emissions of the Mobility & Transport sector. This is not a lot compared to road traffic emissions.  
+
+            Assuming the average person spends 50 hours per year on their boat (with a 50-horsepower motor), they use 175kWh – 236 kWh energy per year. This would produce 0.076 metric tons C02 equivalent.  </p>     
+        
+        
+        
+        <br>
     <h2>Advice</h2>
     <p>Some text..</p>
-        
-          <pre><code class="python"># How many of the canal boats are currently diesel/fossil fuel driven and how many are electrical driven? 
-# 33% of the 7350 registered vessels
-
-number_boats = 7350
-percentage_electric = 33
-
-electric_boats = (percentage_electric / 100) * number_boats
-
-print(electric_boats))</code></pre>
         
   </div>
 </div>
