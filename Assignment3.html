@@ -129,7 +129,7 @@ body {
         
       <p>3.600 people are expected to stay in Airbnb accommodation. The average price of an Airbnb is €254 in Amsterdam. 
             The average occupation would be around 3 people, resulting in 1200 apartments. 
-            This results in a tourist tax of  €213.771.
+            This results in a tourist tax of €213.771.
 
             The other people are expected to stay at hotels, but could also stay at other accommodation, like staying with friend or at campsites. 
             For the sake of the calculation, we estimate that 25.000 people will stay at hotels. 
@@ -193,8 +193,7 @@ print(neighbourhood)
 fig = px.bar(neighbourhood, x='neighbourhood', y='count', title='number of AirBnB locations per neighbourhood in Amsterdam')
 fig.update_xaxes(title='neighbourhood')
 fig.update_yaxes(title='number of AirBnBs') 
-fig.show()    
-</code></pre>
+fig.show() </code></pre>
 
 <h5>3. Which street in Amsterdam has to most AirBnB apartments?</h5>
         <p>By using the latitude and longitude of the AirBnB listings in Amsterdam, a geolocator could be used to find out in which street the most AirBnB listings are located. 
@@ -222,8 +221,7 @@ location['street'] = location.apply(lambda row: get_street_from_location(row['la
 
 most_popular_location = location.sort_values(by='count', ascending=False).iloc[0]
 print("The street with the most Airbnb listings in Amsterdam is:", most_popular_location['street']) 
-print("Number of Airbnb listings in this street:", most_popular_location['count'])
-</code></pre>
+print("Number of Airbnb listings in this street:", most_popular_location['count'])</code></pre>
 
 <h5>4. Which number of apartments are not rented out all the time but are also used as normal housing?</h5>
         <p>8350 out of 8386 are not rented out all the time, which creates the expectation that these are also used as normal housing. 
@@ -252,8 +250,7 @@ bnb_data.hist(column='availability_365')
 plt.title("Availability Airbnbs Amsterdam") 
 plt.xlabel("Availability in Days") 
 plt.ylabel("Number of Apartments") 
-plt.show()
-</code></pre>
+plt.show() </code></pre>
 
 <h5>5. How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?</h5>
       <p>The Airbnb apartments have 14713 beds. This would translate into the same amount of hotel rooms if these were double beds. Otherwise, this would be around 7500 hotel rooms.</p>
@@ -273,8 +270,7 @@ bnb_df['Beds'] = bnb_df['Beds'].str.extract('([\d.]+)').astype(float)
 print(bnb_df['Beds'])
 
 total_beds = int(bnb_df['Beds'].sum())
-print("Totaal aantal bedden:", total_beds)
-</code></pre>
+print("Totaal aantal bedden:", total_beds)</code></pre>
       
 <h5>6. How many different licenses are issued?</h5>
       <p>The 8386 Airbnb apartments of this database are divided between 7288 different licenses. The most issued license holder has 609 Airbnbs.</p>
@@ -289,15 +285,14 @@ print(len(bnb_data))
 
 license_count = bnb_data['license'].value_counts()
 mostissued = license_count.max()
-print("The most issued license holder has", mostissued)
-</code></pre>
+print("The most issued license holder has", mostissued) </code></pre>
         
-    <h2>Conclusion</h2>
+<h2>Conclusion</h2>
 <p>It thus can be concluded that organizing a swimming contest through the Amsterdam canals would result in direct income for the municipality through tourist tax. 
       This could potentially cover some of the costs. To welcome all tourists, spreading them across different neighborhoods and types of accommodations is necessary. 
       This is why focus here is placed on AirBnB as a type of accommodation, next to traditional hotels. </p>
         
-    <h2>References</h2>
+<h2>References</h2>
 <p>City of Amsterdam (n.d.). Tourist tax (toeristenbelasting). https://www.amsterdam.nl/veelgevraagd/toeristenbelasting-2c7c2#</p>
 
 <p>Ecorys (2018). Tourism in Amsterdam. Today and Tomorrow. https://news.airbnb.com/wp-content/uploads/sites/4/2020/02/03122018_Tourism-in-Amsterdam_.pdf</p>
