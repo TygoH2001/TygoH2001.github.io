@@ -126,6 +126,41 @@ body {
       <p>Around 12% of tourists visiting Amsterdam stay in an Airbnb accommodation (Ecorys, 2018). 10% of the turnover is being paid as tourist tax. 
             The other tourists mainly stay at hotels. Hotels have to pay 7% of their turnover as tourist tax. 
             Additionally, hotel guests pay €3 per person per night (City of Amsterdam, n.d.).</p>
+        
+      <pre><code class="python">
+      # Assignment 3.1
+      # What will Amsterdam receive from tourist tax?
+      # The event lasts a week with 30.000 visitors
+
+      import pandas as pd
+
+      # Airbnb tax
+      Airbnb_visitors = 30000 * 0.12 # 12% stays at Airbnb
+      Airbnb_appartments = Airbnb_visitors / 3 # based on average occupation of 3
+
+      bnb_data = pd.read_csv('listings.csv') 
+      bnb_price = bnb_data['price'].mean()
+      print("The mean price of Airbnbs in Amsterdam is:", bnb_price)
+
+      Airbnb_tax = (bnb_price * Airbnb_appartments) * 0.1
+      Airbnb_tax_week = Airbnb_tax * 7
+      print(Airbnb_tax_week)
+
+      # Hotel direct tax
+      direct_tax = 25000 * 3
+      direct_tax_week = direct_tax * 7
+      print (direct_tax_week)
+
+      # Hotel indirect tax
+      average_price = 189 # average hotel price september 2023
+      hotel_rooms = 12500 # based on average occupation of 2
+      indirect_tax = (average_price * hotel_rooms) * 0.07
+      indirect_tax_week = indirect_tax * 7
+      print (indirect_tax_week)
+
+      # Total tourist tax
+      total_tax = Airbnb_tax_week + direct_tax_week + indirect_tax_week
+      print(total_tax, "euro")</code></pre>
 
       <p>3.600 people are expected to stay in Airbnb accommodation. The average price of an Airbnb is €254 in Amsterdam. 
             The average occupation would be around 3 people, resulting in 1200 apartments. 
