@@ -172,7 +172,28 @@ print(amount_of_people)
     <p>10 minutes walking radius are approx. 850m (0,53miles) in every direction (Factista.com, n.d.) 
 
 Based on Open Street Map in this radius around our end point of the swimming route (Van Mierlobrug) we wrote a python code that counts the cafes, bars and restaurants in the 850 m radius, prints all their names and plots them on a map. </p> 
-<pre><code class="python">
+
+<p>This way we find:
+<ul>
+<li>Number of bars: 70 </li>
+<li>Number of restaurants: 357 </li>
+<li>Number of cafes: 137  </li>
+</ul>
+
+The names of all these cafes, bars and restaurants are stored in the excel file 'Cafes_Bars_Restaurants_around_finishline' on Github. 
+
+ The map shows all places around Van Mierlobrug and can be zoomed in and out when plottet in Jupyterlab.
+<ul>
+<li>Blue markers = Cafés </li>
+<li>Green markers = Bars </li>
+<li>Orange markers = Restaurants  </li>
+</ul> </p>
+        
+<img src="map_cafes_bars_restaurants.png" width="500" height="269">
+
+<img src="map_cafes_bars_restaurants_closeup.png" width="250" height="135">    
+    
+    <pre><code class="python">
 # we need the requests library to get the data from OSM and the folium library to plot the map
 
 import requests
@@ -301,22 +322,6 @@ if response.status_code == 200:
 m
 </code></pre>      
       
-<p>This we find:
-<ul>
-<li>Number of bars: 70 </li>
-<li>Number of restaurants: 357 </li>
-<li>Number of cafes: 137  </li>
-</ul>
-
-The names of all these cafes, bars and restaurants are stored in the excel file 'Cafes_Bars_Restaurants_around_finishline' on Github. 
-
- The map shows all places around Van Mierlobrug and can be zoomed in and out when plottet in Jupyterlab.
-<ul>
-<li>Blue markers = Cafés </li>
-<li>Green markers = Bars </li>
-<li>Orange markers = Restaurants  </li>
-</ul> </p>
-    
     
     <h4>References</h4>
     <p>Factista.com (n.d). <i> How far can you walk in 10 minutes? </i> https://factista.com/en/how-far-can-you-walk-in-10-minutes [16.10.2023]</p>
