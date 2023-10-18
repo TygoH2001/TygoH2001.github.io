@@ -162,7 +162,65 @@ body {
 
             Assuming the average person spends 50 hours per year on their boat (with a 50-horsepower motor), they use 175kWh – 236 kWh energy per year [BoaterPal, 2023]. This would produce 0.076 metric tons C02 equivalent.  </p>     
         
+      <img src="Picture kWh boat.png" width="600" height="147">   
+        <p>[BoaterPal, 2023]</p>
+
+        <p>To compare, an electric car with in average 20 miles driven per day needs 144 kWh per month, adding up to  1728 kWh per year for average use (python code). This would produce 1584 lbs or 0.7184903 metric tons C02 equivalent.</p>
+
+        <img src="Picture kWh car.png" width="600" height="521">   
+        <p>[Perch Energy, 2023] </p>
+
+        <p>The relation of energy use and carbon footprint is the same (at least we didn`t find an option to take material use or different batteries into account) but recreational boats have a much smaller energy use due to their function as a summer leisure time activity.</p>
+
+<h3>How many support boats and vehicles are needed for this event? </h3>
+        <p>The yearly Amsterdam city swim attracts around 2500 participants. It is expected that this event will attract at least a similar number. 
+
+ During the Amsterdam City Swim, the safety of swimmers is guaranteed by Royal Netherlands Sea Rescue Institution lifeguards in the water and supervisors on the quay. A first-aid station and a resting point on the water are stationed at every 500 meters [Amsterdam City Swim, 2023]. This seems like a reasonable  
+
+For a distance of 5 km, we thereby need at least 10 boats for lifeguards and supervisors in this event, plus one for the start and we assume that 3 boats for communication purposes and as a buffer are needed. This adds up to 14 boats </p>
+
+      <pre><code class="python"> 
+      #amout of necessary lifeboats and supportboats
+
+      average_amount = 1/500
+      lenght = 5000
+      start_boat = 1
+      communication = 2
+      buffer = 1
+
+      amount_boats = lenght * average_amount + start_boat + communication + buffer
+      print(amount_boats)
+      </code></pre>
         
+<h3>Would you consider it economically feasible? </h3>
+       
+        <p>Looking at the energy use of the needed number of boats (see previous question), we assume that an average security boat has an energy use of 15,5 kWh per hour [Van Mensch et al., 2016]. The security boats will be stationary most of the time but we assume they will be moving for 2 hours on average per day. If the event is lasting one week, we have an energy consumption of 3038 kWh for running the 14 security boats during the event.  
+
+The price per kWh is about 0,12€/kWh [Van Mensch et al., 2016]. This adds up to energy costs of only 364,56 € for the security boats used during the event. </p>
+
+       <pre><code class="python"> 
+      #Energy for electric boat motors (amount_boats is extracted from last code snippet)
+             
+      kWh = 15.5
+      hours_per_day = 2
+      days = 7
+            
+      energy_use = kWh * hours_per_day * days * amount_boats
+      enery_price = energy_use * 0,12
+      
+      print(energy_use)
+      print(enery_price)
+             
+        </code></pre>
+
+ <p>Since it will be required in Amsterdam to have an electrical vessel from 2025 onwards, there is already a trend towards electric boats, making it more feasible to use electric boats only for the event. This event can also be used as promotion of this 2025 policy and make use of fundings (such as by Vattenfall [2023]) and sponsorships for electrification of boats in context of an international sports event. The timing for such initiatives and sponsorships fits great since the event will be held in May 2024. This way we do consider an emission neutral event economically feasible </p>
+
+<h3>How many solar panels or wind turbines are needed? </h3>
+
+        <p>10 solar panels of 400Wp generate 3.400 kWh in the first year [Vattenfall, n.d.]. -->in progress!!</p>
+
+<h3>Would there be any effect on the water quality if there were no canal boats using fossil fuels? </h3>
+        <p>The primary benefits of electric boats are lower carbon emissions, reduced air pollution and reduced water pollution. However, the focus in Amsterdam is on reducing air pollution, so it is hard to find specific data about the impacts of electric boats on water quality. Assuming that no canal boats use fossil fuels in future, that should have a significant positive impact on the water quality in the canals [Hemez et Al., 2020].  </p>
         
         <br>
     <h2>Advice</h2>
