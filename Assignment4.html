@@ -121,12 +121,12 @@ body {
   <div class="main">
     <h2>Assignment 4 - Transport</h2>
     <h2>Advice</h2>
-    <p>The route from the first assignment is shown below.</p>
+    <p>The route from the first assignment is shown below. This data is used to make a GeoJSON file for this excersice.</p>
 
-    
+    <img src="AmsterdamRoute.png" width="400" height="245">
 
     <h5>1. Find the centre of the nodes of the swimming route and find a suitable spot for the Event Headquarters.</h5>
-    <p>At first the geojson file <a href="map.geojson" download="Route">(link)</a> was made to calculate the centerpoint of our route.</p>
+    <p>At first the geojson file <a href="map.geojson" download="Route">(link)</a> was made to calculate the centerpoint of our route using the code below.</p>
 
       <pre><code class="python">import geopandas as gpd
 
@@ -138,17 +138,17 @@ midpoint = line_data.geometry.interpolate(0.5, normalized=True)
 
 print(midpoint)</code></pre>
 
-    <p>POINT (4.89871 52.36383)</p>
+    <p>point = (4.89871 52.36383)</p>
 
     <p>The centerpoint is the tram stop of Keizersgracht. At this place, as shown on the figure below, there is a lot of open space nearby the tram stop. 
-    This is a perfect spot for the Event Headquarters</p>
+    This is a perfect spot for the Event Headquarters, where tents can be placed.</p>
 
     <img src="Centerpoint.png" width="450" height="304">
 
     <h4>2. Find the closest bus and tram stops at the start and finish of the swimming route. How
 many people can be transported within an hour.</h4>
 
-    <p>The closest bus and tram stop at the finish is Nieuwezijds Kolk (tram 2, 12, 13, 17). The busstop is only used at night, which means that the closest busstop is central station. The amount of trams is 32 each hour to central station.
+    <p>Using Google Maps to search for the closet tram and bus stops. This resulted to the outcome of the closest bus and tram stop at the finish being Nieuwezijds Kolk (tram 2, 12, 13, 17). The busstop is only used at night, which means that the closest busstop is central station. The amount of trams is 32 each hour to central station.
     Each tram has place for 175 persons</p>
 
      <pre><code class="python">
