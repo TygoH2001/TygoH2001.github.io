@@ -223,16 +223,22 @@ body {
 
    <h4>Extra excercise</h4>
 
- <pre><code class="python">   # Sample data as a list
-data = [12, 105, 67, 34, 89, 1023, 106, 478, 190, 119]
+ <pre><code class="python">import pandas as pd
+xlsx = 'C:/Users/tygoh/Downloads/2020_jaarboek_941_4eccf4d8b6.xlsx'
+df = pd.read_excel(xlsx)
 
-# minimum and maximum values
-minimum_value = min(data)
-maximum_value = max(data)
-print("Minimum Value:", minimum_value)
-print("Maximum Value:", maximum_value)</code></pre>
-   <p>Minimum Value: 12</p>
-   <p>Minimum Value: 1023</p>
+#from txt to NaN, so it is all numeric
+df['totaal fosfor'] = pd.to_numeric(df['totaal fosfor'], errors='coerce')
+
+column_name2 = 'totaal fosfor'
+
+min_value2 = df[column_name2].min()
+max_value2 = df[column_name2].max()
+
+print(f"Minimum value in {column_name2} : {min_value2}")
+print(f"Maximum value in {column_name2} : {max_value2}")</code></pre>
+   <p>Minimum value in totaal fosfor : 0.02</p>
+   <p>Maximum value in totaal fosfor : 2.03</p>
 
 
    <h4>References</h4>
