@@ -168,10 +168,160 @@ print(amount_of_people)
 
   
 <h5>3. Find all cafes, restaurants near the finish line. Walking time smaller than 10 minutes</h5>
+
+    <p>10 minutes walking radius are approx. 850m (0,53miles) in every direction (Factista.com, n.d.) 
+
+Based on Open Street Map in this radius around our end point of the swimming route (Van Mierlobrug) we wrote a python code that counts the cafes, bars and restaurants in the 850 m radius, prints all their names and plots them on a map. </p> 
+<pre><code class="python">
+# we need the requests library to get the data from OSM and the folium library to plot the map
+
+import requests
+import folium
+
+# We define the query to search for cafes, bars and restaurants with Overpass API
+
+overpass_url = "https://overpass-api.de/api/interpreter"
+
+# we define the radius in meter and the coordinates of Van Mierlobrug (end point of the swimming route) 
+
+overpass_query = """
+[out:json];
+(
+  node(around:850, 52.37683, 4.88984); 
+  way(around:850, 52.37683, 4.88984);
+  rel(around:850, 52.37683, 4.88984);
+);
+out center;
+"""
+
+# We send the query to the Overpass API to get the data
+
+response = requests.get(overpass_url, params={"data": overpass_query})
+
+if response.status_code == 200:
+    data = response.json()
+
+    # We set 0 as the start value for counting
+    cafe_count = 0
+    bar_count = 0
+    restaurant_count = 0
+
+    # We open 3 lists to store the cafe, bar and restaurant names
+    cafe_names = []
+    bar_names = []
+    restaurant_names = []
+   # We create a map of the coordinates to plot the results and markers for the map
+
+    m = folium.Map(location=[52.37683, 4.88984], zoom_start=15)
+
+    cafe_markers = folium.FeatureGroup(name='Cafes')
+
+    restaurant_markers = folium.FeatureGroup(name='Restaurants')
+
+    bar_markers = folium.FeatureGroup (name='bar')
+
+    # We iterate through the elements, count all cafes, bars, and restaurants, add the to the map and add their names to the 3 lists
+    
+    for element in data['elements']:
+        if 'tags' in element:
+            tags = element['tags']
+            if 'name' in tags:
+                name = tags['name']
+                if 'amenity' in tags:
+                    amenity = tags['amenity']
+                    if amenity == 'cafe':
+                        cafe_count += 1
+                        cafe_names.append(name)
+                        location = (element.get('lat'), element.get('lon'))
+                        popup = tags.get('name', 'Cafe')
+                        icon_color = 'blue'
+                        if None not in location:
+                            cafe_markers.add_child(folium.Marker(
+                            location=location,
+                            popup=popup,
+                            icon=folium.Icon(color=icon_color)
+                            ))
+                    elif amenity == 'bar':
+                        bar_count += 1
+                        bar_names.append(name)
+                        location = (element.get('lat'), element.get('lon'))
+                        popup = tags.get('name', 'Bar')      
+                          icon_color = 'green'
+                        if None not in location:
+                            bar_markers.add_child(folium.Marker(
+                            location=location,
+                            popup=popup,
+                            icon=folium.Icon(color=icon_color)
+                            ))
+                    elif amenity == 'restaurant':
+                        restaurant_count += 1
+                        restaurant_names.append(name)
+                        location = (element.get('lat'), element.get('lon'))
+                        popup = tags.get('name', 'Restaurant')
+                        icon_color = 'orange'
+                        if None not in location:
+                            restaurant_markers.add_child(folium.Marker(
+                            location=location,
+                            popup=popup,
+                            icon=folium.Icon(color=icon_color)
+                            ))
+
+
+    # we print the numbers of cafes, bars, and restaurants in the 850m radius
+
+    print(f"Number of cafes: {cafe_count}")
+
+    print(f"Number of bars: {bar_count}")
+
+    print(f"Number of restaurants: {restaurant_count}")
+
+    # we want to have a list of all names of those cafes, bars and restaurants (remove if you don`t want too much information)
+
+    print("Cafes:")
+    for name in cafe_names:
+        print(name)
+    
+    print("\nBars:")
+    for name in bar_names:
+        print(name)
+
+    print("\nRestaurants:")
+    for name in restaurant_names:
+        print(name)
+
+    # we add the markers to the map
+    m.add_child(cafe_markers)
+    m.add_child(bar_markers)
+    m.add_child(restaurant_markers)
+
+    # we add a layer control for themarkers
+    folium.LayerControl().add_to(m)
+
+    # we plot the map in Jupyter Lab
+m
+</code></pre>      
+      
+<p>This we find:
+<ul>
+<li>Number of bars: 70 </li>
+<li>Number of restaurants: 357 </li>
+<li>Number of cafes: 137  </li>
+</ul>
+
+The names of all these cafes, bars and restaurants are stored in the excel file 'Cafes_Bars_Restaurants_around_finishline' on Github. 
+
+ The map shows all places around Van Mierlobrug and can be zoomed in and out when plottet in Jupyterlab.
+<ul>
+<li>Blue markers = Cafés </li>
+<li>Green markers = Bars </li>
+<li>Orange markers = Restaurants  </li>
+</ul> </p>
+    
     
     <h4>References</h4>
-    <p>GVB. (2023, 4 mei). <i>Onze trams - over GVB. Over GVB. </i> https://over.gvb.nl/ov-in-amsterdam/voer-en-vaartuigen/tram-in-cijfers/</p>
-    <p>GVB. (2022, 13 juni). <i>Onze bussen - over GVB. Over GVB.</i> https://over.gvb.nl/ov-in-amsterdam/voer-en-vaartuigen/bus-in-cijfers/</p>
+    <p>Factista.com (n.d). <i> How far can you walk in 10 minutes? </i> https://factista.com/en/how-far-can-you-walk-in-10-minutes [16.10.2023]</p>
+    <p>GVB. (2023, 4 mei). <i>Onze trams - over GVB. Over GVB. </i> https://over.gvb.nl/ov-in-amsterdam/voer-en-vaartuigen/tram-in-cijfers/[16.10.2023]</p>
+    <p>GVB. (2022, 13 juni). <i>Onze bussen - over GVB. Over GVB.</i> https://over.gvb.nl/ov-in-amsterdam/voer-en-vaartuigen/bus-in-cijfers/[16.10.2023]</p>
 
     
   </div>
