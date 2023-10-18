@@ -123,7 +123,7 @@ body {
     <p> The Municipality is worried that the canal- and support boats might pollute the air with their diesel engines. Since the Municipality wants to create ideal condi􀆟ons for the swimmers so they can set records (always nice for PR), it is your task to figure out if their concern is warranted and what should or could be done to improve condi􀆟ons. Next to that, Amsterdam wants to adver􀆟se this event as a Neutral Energy Event©™® (NEE).   </p>
    
     <h5> 1) How many of the canal boats currently in use are diesel/fossil fuel driven and how many boats are electrical driven? </h5>    
-      <p> Amsterdam wants to ban diesel engines from the centre's canals by 2025 completely. In 2022, approximately 33% of the 7350 registered vessels in Amsterdam were already fully or partly emission-free. That is a total of 2453 boats. Note: hybrid boats are only allowed to use their electric motor inside Amsterdam’s city center and are therefore considered electrically driven for this calculation.  [Gemeente Amsterdam, 2022a] </p>
+      <p> Amsterdam wants to ban diesel engines from the centre's canals by 2025 completely. In 2022, approximately 33% of the 7350 registered vessels in Amsterdam were already fully or partly emission-free. That is a total of 2453 boats. Note: hybrid boats are only allowed to use their electric motor inside Amsterdam’s city center and are therefore considered electrically driven for this calculation.  (Gemeente Amsterdam, 2022a) </p>
             
 <pre><code class="python">
       # How much is 33% of the 7350 registered vessels?
@@ -136,7 +136,7 @@ body {
       print(electric_boats)
 </code></pre>
 
-<p> Of the recreational boats, mostly privately-owned, only 5 % are emissions-free. Of the 550 commercial vessels, including tourist focused canal boats, 75 % were already emission free in 2020. However, these make up only 7,5 % of all registered boats. [Sterling, 2020] </p>
+<p> Of the recreational boats, mostly privately-owned, only 5 % are emissions-free. Of the 550 commercial vessels, including tourist focused canal boats, 75 % were already emission free in 2020. However, these make up only 7,5 % of all registered boats. (Sterling, 2020) </p>
    
         <pre><code class="python">
       #550 boats out of 7350 are commercial vessels - percentage?
@@ -153,26 +153,26 @@ body {
       <p> Yes, between 15-18h. </p>
 
       <img src="Peak hours.png" width="450" height="425">  
-        <p> [Gemeente Amsterdam, 2022b] </p>
+        <p> (Gemeente Amsterdam, 2022b) </p>
             
       <h5>Try to compare the energy use of the canal boats to some other activities in the city. Use canal boats more or less energy in relation to their carbon footprint compared to these other activities? </h5>
       <p> It is very difficult to compare the energy use of electric boats to other activities 	because there is not much data publicly available. Also, the periods of use, purposes of use and boat models differ a lot. 
 
-            We found that the CO2 emissions of canal boats in Amsterdam are included within inland shipping numbers. Inland shipping is responsible for 2% of the CO2 emissions of the Mobility & Transport sector. This is not a significant number compared to road traffic emissions [Hoen & van Wijngaarden, 2019].  
+            We found that the CO2 emissions of canal boats in Amsterdam are included within inland shipping numbers. Inland shipping is responsible for 2% of the CO2 emissions of the Mobility & Transport sector. This is not a significant number compared to road traffic emissions (Hoen & van Wijngaarden, 2019).  
 
-            Assuming the average person spends 50 hours per year on their boat (with a 50-horsepower motor), they use 175kWh – 236 kWh energy per year [BoaterPal, 2023]. This would produce 0.076 metric tons C02 equivalent.  </p>     
+            Assuming the average person spends 50 hours per year on their boat (with a 50-horsepower motor), they use 175kWh – 236 kWh energy per year (BoaterPal, 2023). This would produce 0.076 metric tons C02 equivalent.  </p>     
         
       <img src="Picture kWh boat.png" width="600" height="147">   
-        <p>[BoaterPal, 2023]</p>
+        <p>(BoaterPal, 2023)</p>
 
-        <p>To compare, an electric car with in average 20 miles driven per day needs 144 kWh per month, adding up to  1728 kWh per year for average use (python code). This would produce 1584 lbs or 0.7184903 metric tons C02 equivalent.</p>
+        <p>To compare, an electric car with in average 20 miles driven per day needs 144 kWh per month, adding up to  1728 kWh per year for average use. This would produce 1584 lbs or 0.7184903 metric tons C02 equivalent.</p>
 
         <img src="Picture kWh car.png" width="600" height="521">   
-        <p>[Perch Energy, 2023] </p>
+        <p>(Perch Energy, 2023) </p>
 
         <p>The relation of energy use and carbon footprint is the same (at least we didn`t find an option to take material use or different batteries into account) but recreational boats have a much smaller energy use due to their function as a summer leisure time activity.</p>
 
-<h3>How many support boats and vehicles are needed for this event? </h3>
+<h5>How many support boats and vehicles are needed for this event? </h5>
         <p>The yearly Amsterdam city swim attracts around 2500 participants. It is expected that this event will attract at least a similar number. 
 
  During the Amsterdam City Swim, the safety of swimmers is guaranteed by Royal Netherlands Sea Rescue Institution lifeguards in the water and supervisors on the quay. A first-aid station and a resting point on the water are stationed at every 500 meters [Amsterdam City Swim, 2023]. This seems like a reasonable  
@@ -192,11 +192,11 @@ For a distance of 5 km, we thereby need at least 10 boats for lifeguards and sup
       print(amount_boats)
       </code></pre>
         
-<h3>Would you consider it economically feasible? </h3>
+<h5>Would you consider it economically feasible? </h5>
        
-        <p>Looking at the energy use of the needed number of boats (see previous question), we assume that an average security boat has an energy use of 15,5 kWh per hour [Van Mensch et al., 2016]. The security boats will be stationary most of the time but we assume they will be moving for 2 hours on average per day. If the event is lasting one week, we have an energy consumption of 3038 kWh for running the 14 security boats during the event.  
+        <p>Looking at the energy use of the needed number of boats (see previous question), we assume that an average security boat has an energy use of 15,5 kWh per hour (Van Mensch et al., 2016). The security boats will be stationary most of the time but we assume they will be moving for 2 hours on average per day. If the event is lasting one week, we have an energy consumption of 3038 kWh for running the 14 security boats during the event.  
 
-The price per kWh is about 0,12€/kWh [Van Mensch et al., 2016]. This adds up to energy costs of only 364,56 € for the security boats used during the event. </p>
+The price per kWh is about 0,12€/kWh (Van Mensch et al., 2016). This adds up to energy costs of only 364,56 € for the security boats used during the event. </p>
 
        <pre><code class="python"> 
       #Energy for electric boat motors (amount_boats is extracted from last code snippet)
@@ -213,30 +213,27 @@ The price per kWh is about 0,12€/kWh [Van Mensch et al., 2016]. This adds up t
              
         </code></pre>
 
- <p>Since it will be required in Amsterdam to have an electrical vessel from 2025 onwards, there is already a trend towards electric boats, making it more feasible to use electric boats only for the event. This event can also be used as promotion of this 2025 policy and make use of fundings (such as by Vattenfall [2023]) and sponsorships for electrification of boats in context of an international sports event. The timing for such initiatives and sponsorships fits great since the event will be held in May 2024. This way we do consider an emission neutral event economically feasible </p>
+ <p>Since it will be required in Amsterdam to have an electrical vessel from 2025 onwards, there is already a trend towards electric boats, making it more feasible to use electric boats only for the event. This event can also be used as promotion of this 2025 policy and make use of fundings (such as by Vattenfall (2023)) and sponsorships for electrification of boats in context of an international sports event. The timing for such initiatives and sponsorships fits great since the event will be held in May 2024. This way we do consider an emission neutral event economically feasible </p>
 
-<h3>How many solar panels or wind turbines are needed? </h3>
+<h5>How many solar panels or wind turbines are needed? </h5>
 
-        <p>10 solar panels of 400Wp generate 3.400 kWh in the first year [Vattenfall, n.d.]. -->in progress!!</p>
+        <p>10 solar panels of 400Wp generate 3.400 kWh in the first year (Vattenfall, 2023. -->in progress!!</p>
 
-<h3>Would there be any effect on the water quality if there were no canal boats using fossil fuels? </h3>
-        <p>The primary benefits of electric boats are lower carbon emissions, reduced air pollution and reduced water pollution. However, the focus in Amsterdam is on reducing air pollution, so it is hard to find specific data about the impacts of electric boats on water quality. Assuming that no canal boats use fossil fuels in future, that should have a significant positive impact on the water quality in the canals [Hemez et Al., 2020].  </p>
+<h5>Would there be any effect on the water quality if there were no canal boats using fossil fuels? </h5>
+        <p>The primary benefits of electric boats are lower carbon emissions, reduced air pollution and reduced water pollution. However, the focus in Amsterdam is on reducing air pollution, so it is hard to find specific data about the impacts of electric boats on water quality. Assuming that no canal boats use fossil fuels in future, that should have a significant positive impact on the water quality in the canals (Hemez et Al., 2020).  </p>
         
 <h3>References</h3>
-        <p>
-              Amsterdam City Swim, 2023: Swim Along – Savety. https://www.amsterdamcityswim.nl/english [15.10.2023]</p>
-	<p>Gemeente Amsterdam, 2022a: Bijlage: Evaluatie Elektrisch Varen. Published by Gemeente Amsterdam. https://openresearch.amsterdam/image/2023/6/28/evaluatie_elektrisch_varen.pdf [14.10.2023]. </p>
-             <p> Sterling, T., 2020: Amsterdam's boats go electric ahead of 2025 diesel ban. Published by Thompson Reuters. https://www.reuters.com/article/us-climate-change-netherlands/amsterdams-boats-go-electric-ahead-of-2025-diesel-ban-idUSKBN20Q1W7 [14.10.2023]. </p>
-             <p> Gemeente Amsterdam, 2022b: Grachtenmonitor 2022, 1 Oktober 2021 - 1 Oktober. Published by Gemeente Amsterdam.  https://openresearch.amsterdam/nl/page/92981/grachtenmonitor-2022 (pp.7-9) [14.10.2023] </p>
-             <p> BoaterPal [2023]: Electric vs. Gas Outboard Motors: Which Is Better? https://boaterpal.com/electric-vs-gas-outboard-motors-which-is-better/ [15.10.2023] </p>
-
-		<p>Hoen, A. & van Wijngaarden, 2019: CO2-uitstoot mobiliteit in de Vervoerregio Amsterdam Prognose van de uitstoot t/m 2030 en effecten van maatregelen. Published by CE Delft. https://openresearch.amsterdam/image/2020/10/7/ce_delft_190124_co2_uitstoot_mobiliteit_in_de_vervoerregio_amsterdam_def.pdf  [14.10.2023] </p>
-
-	<p>Perch Energy, 2023: What's the Energy Use & Cost of Charging Your Electric Car? (Tesla, Chevy, Nissan, Porsche)? https://www.perchenergy.com/energy-calculators/electric-car-electricity-use-cost [15.10.2023] </p>
-          <p>    Vattenfall, 2023: Vattenfall and Stromma invest in electric boats.  Amsterdam, February 2023. https://group.vattenfall.com/press-and-media/pressreleases/2023/vattenfall-and-stromma-invest-in-electric-boats [18.10.2023] </p>
-
-	<p>van Mensch, P., Verbeek, R., & Bolech, M. (2016). Elektrische rondvaart in Amsterdam. Delft: TNO. </p>
-        
+       	<p> Amsterdam City Swim, 2023: Swim Along – Savety. https://www.amsterdamcityswim.nl/english [15.10.2023]</p>
+	<p> BoaterPal [2023]: Electric vs. Gas Outboard Motors: Which Is Better? https://boaterpal.com/electric-vs-gas-outboard-motors-which-is-better/ [15.10.2023] </p>
+	<p> Gemeente Amsterdam, 2022a: Bijlage: Evaluatie Elektrisch Varen. Published by Gemeente Amsterdam. https://openresearch.amsterdam/image/2023/6/28/evaluatie_elektrisch_varen.pdf [14.10.2023]. </p>
+        <p> Gemeente Amsterdam, 2022b: Grachtenmonitor 2022, 1 Oktober 2021 - 1 Oktober. Published by Gemeente Amsterdam.  https://openresearch.amsterdam/nl/page/92981/grachtenmonitor-2022 (pp.7-9) [14.10.2023] </p>
+        <p> Hoen, A. & van Wijngaarden, 2019: CO2-uitstoot mobiliteit in de Vervoerregio Amsterdam Prognose van de uitstoot t/m 2030 en effecten van maatregelen. Published by CE Delft. https://openresearch.amsterdam/image/2020/10/7/ce_delft_190124_co2_uitstoot_mobiliteit_in_de_vervoerregio_amsterdam_def.pdf  [14.10.2023] </p>
+	<p> Perch Energy, 2023: What's the Energy Use & Cost of Charging Your Electric Car? (Tesla, Chevy, Nissan, Porsche)? https://www.perchenergy.com/energy-calculators/electric-car-electricity-use-cost [15.10.2023] </p>
+        <p> Sterling, T., 2020: Amsterdam's boats go electric ahead of 2025 diesel ban. Published by Thompson Reuters. https://www.reuters.com/article/us-climate-change-netherlands/amsterdams-boats-go-electric-ahead-of-2025-diesel-ban-idUSKBN20Q1W7 [14.10.2023]. </p>
+	<p> van Mensch, P., Verbeek, R., & Bolech, M. (2016). Elektrische rondvaart in Amsterdam. Delft: TNO. </p>
+	<p> Vattenfall, 2023: Vattenfall and Stromma invest in electric boats.  Amsterdam, February 2023. https://group.vattenfall.com/press-and-media/pressreleases/2023/vattenfall-and-stromma-invest-in-electric-boats [18.10.2023] </p>
+	
+       
   </div>
 </div>
 
