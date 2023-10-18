@@ -1,6 +1,6 @@
 import pandas as pd
 #Change the path to the downloaded file
-xlsx = 'C:/Users/tygoh/Downloads/2020_jaarboek_941_4eccf4d8b6.xlsx'
+xlsx = '2020_jaarboek_941_4eccf4d8b6.xlsx'
 df = pd.read_excel(xlsx)
 
 #from txt to NaN, so it is all numeric
