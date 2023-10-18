@@ -196,7 +196,7 @@ For a distance of 5 km, we thereby need at least 10 boats for lifeguards and sup
        
         <p>Looking at the energy use of the needed number of boats (see previous question), we assume that an average security boat has an energy use of 15,5 kWh per hour (Van Mensch et al., 2016). The security boats will be stationary most of the time but we assume they will be moving for 2 hours on average per day. If the event is lasting one week, we have an energy consumption of 3038 kWh for running the 14 security boats during the event.  
 
-The price per kWh is about 0,12€/kWh (Van Mensch et al., 2016). This adds up to energy costs of only 364,56 € for the security boats used during the event. </p>
+The energy price for boats in Amsterdam is 0,28 €/kWh [Gemeente Amsterdam, 2016]. This adds up to energy costs of only 850,64 € for the boats used during the event. . </p>
 
        <pre><code class="python"> 
       #Energy for electric boat motors (amount_boats is extracted from last code snippet)
@@ -206,7 +206,7 @@ The price per kWh is about 0,12€/kWh (Van Mensch et al., 2016). This adds up t
       days = 7
             
       energy_use = kWh * hours_per_day * days * amount_boats
-      enery_price = energy_use * 0,12
+      enery_price = energy_use * 0,28
       
       print(energy_use)
       print(enery_price)
@@ -222,6 +222,9 @@ The price per kWh is about 0,12€/kWh (Van Mensch et al., 2016). This adds up t
 <h5>Would there be any effect on the water quality if there were no canal boats using fossil fuels? </h5>
         <p>The primary benefits of electric boats are lower carbon emissions, reduced air pollution and reduced water pollution. However, the focus in Amsterdam is on reducing air pollution, so it is hard to find specific data about the impacts of electric boats on water quality. Assuming that no canal boats use fossil fuels in future, that should have a significant positive impact on the water quality in the canals (Hemez et Al., 2020).  </p>
         
+<h5>Conclusion</h5>
+
+	  
 <h3>References</h3>
        	<p> Amsterdam City Swim, 2023: Swim Along – Savety. https://www.amsterdamcityswim.nl/english [15.10.2023]</p>
 	<p> BoaterPal [2023]: Electric vs. Gas Outboard Motors: Which Is Better? https://boaterpal.com/electric-vs-gas-outboard-motors-which-is-better/ [15.10.2023] </p>
