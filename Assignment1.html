@@ -137,14 +137,14 @@ body {
 <p>In our definition of (commercial) water transport, we include commercial deliveries and cargo, as well as construction boats, points of loaden and unloading, and the ferries.</p>
 
     <ul style="list-style-type: square;">
-        <li>Ferry’s operate on the IJ, which excludes this from the swimming route. (Lijnen | GVB, z.d.)
+        <li>Ferry’s operate on the IJ, which excludes this from the swimming route. (Lijnen | GVB, n.d.)
            <ul>
                  <li>This geodata is not downloadable. The geospatial data is represented through points and lines.</li>
              </ul>
         </li>
      <br> 
 
-      <li>The same is true for commercial transport by boat. However, besides the IJ, commercial water transport passes through the Amstel and from the Amstel through the Westerdok. (Atom DownloadServices - PDOK, z.d.)
+      <li>The same is true for commercial transport by boat. However, besides the IJ, commercial water transport passes through the Amstel and from the Amstel through the Westerdok. (PDOK, n.d.)
            <ul>
                  <li>The geodata can be downloaded in gpkg format. It is geospatial data, where the data is represented geometrically through lines. </li>
                  <li>There are different libraries to read this data type, such as geopandas and Fiona. </li>
@@ -152,7 +152,7 @@ body {
         </li>
 
      <br> 
-       <li>The municipality of Amsterdam has spatial data of the boarding and disembarking points of water transport vessels. Because of this information, canals which less points can be included in the route, to avoid disruption. (Gemeente Amsterdam Klaas-Bindert de Haan, z.d.)
+       <li>The municipality of Amsterdam has spatial data of the boarding and disembarking points of water transport vessels. Because of this information, canals which less points can be included in the route, to avoid disruption. (Gemeente Amsterdam, n.d.)
            <ul>
                  <li>This data can be downloaded in json and csv. There are human readable text files. The csv data is stored alphanumerical, with words and numbers. The geospatial data is represented through points. </li>
                  <li>The csv data is readable in Python. Python also has a built-in package called json, which can be imported.</li>
@@ -164,7 +164,7 @@ body {
 <h5>2. It would be appreciated if the event has small impact on the routes of the canal boats. </h5>
 <p>To make sure the impact on canal boats is being minimalized, their location and routs need to be analyzed.</p>
     <ul style="list-style-type: square;">
-        <li>The municipality of Amsterdam has spatial data on the boarding and disembarking points of passenger shipping.  (Gemeente Amsterdam Klaas-Bindert de Haan, z.d.)
+        <li>The municipality of Amsterdam has spatial data on the boarding and disembarking points of passenger shipping.  (Gemeente Amsterdam, n.d.)
                  <li>This data can be downloaded in json and csv. There are human readable text files. The csv data is stored alphanumerical, with words and numbers. The geospatial data is represented through points. </li>
                  <li>The csv data is readable in Python. Python also has a built-in package called json, which can be imported.</li>
              </ul>
@@ -183,7 +183,7 @@ body {
    <h5>3. What is the pollution level of the canals and is there data from all the canals? Are the canals monitored and can you swim there safely?  </h5>
 <p>The route of the Amsterdam city swim is being monitored by Waternet during the year (Amsterdam City Swim, n.d.). However, only the quality of official swimming locations is being published regularly. The other data isn’t published online or anywhere and is private to Waternet.</p>
     <ul style="list-style-type: square;">
-        <li>There is a national database available with water quality results of official swimming locations. This can provides insights in the water quality of official swimming locations in Amsterdam. These locations can possibly be included in the route. (Introductie - PDOK, z.d.) 
+        <li>There is a national database available with water quality results of official swimming locations. This can provides insights in the water quality of official swimming locations in Amsterdam. These locations can possibly be included in the route. (PDOK, n.d.) 
            <ul>
                  <li>The geodata can be downloaded in gpkg format. It is geospatial data, where the data is represented geometrically through points. </li>
                  <li>There are different libraries to read this data such as pygml and geopython.</li>
@@ -199,7 +199,7 @@ body {
         
       </li>
      <br> 
-      <li>There is more specific data available of the water quality of some locations. This dates from 2019. (Onderzoek Amsterdam, z.d.)
+      <li>There is more specific data available of the water quality of some locations. This dates from 2019. (Onderzoek Amsterdam, n.d.)
            <ul>
                  <li>This alphanumerical data set is stored in an excel file. This is no geospatial nor temporal data. </li>
                  <li>The most used packages for working with excel files in Python is openpyxl. </li>
@@ -207,7 +207,7 @@ body {
         </li>
 
        <br> 
-       <li>Since overall data on the water quality of the canals is not (publicly) available, looking at the sewage system might be helpful. Mixed sewers can overflow in times of heavy rainfall, leading to unsafe swimming water. (Data en informatie, z.d.)
+       <li>Since overall data on the water quality of the canals is not (publicly) available, looking at the sewage system might be helpful. Mixed sewers can overflow in times of heavy rainfall, leading to unsafe swimming water. (Data en informatie, n.d.)
            <ul>
                  <li>This geospatial data is not downloadable through this website. This geospatial data is represented through lines. </li>
               
@@ -233,13 +233,13 @@ print("Maximum Value:", maximum_value)</code></pre>
 
    <h4>References</h4>
    <ul style="list-style-type: square;">
-       <li>Lijnen | GVB. (z.d.). <i>Reisinformatie GVB.</i>https://reisinfo.gvb.nl/nl/lijnen?boat&show</li>    
-      <li>Atom DownloadServices - PDOK. (z.d.). <i>Vaarweg informatie Nederland.</i> https://www.pdok.nl/atom-downloadservices/-/article/vaarweg-informatie-nederland-vin-</li>   
-      <li>Gemeente Amsterdam Klaas-Bindert de Haan. (z.d.). <i>Op- en afstapplaatsen & ligplaatsen passagiersvaartuigen.</i> https://maps.amsterdam.nl/varen/</li>   
-      <li>Data en informatie. (z.d.). <i>Data en informatie Amsterdam.</i> https://data.amsterdam.nl/data/</li>  
-    <li>Onderzoek Amsterdam (z.d.).<i>Water in Amsterdam.</i> https://onderzoek.amsterdam.nl/dataset/water-in-amsterdam</li> 
-    <li>Gemeente Amsterdam Klaas-Bindert de Haan. (z.d.-b). <i>Zwem- en speelwater.</i> https://maps.amsterdam.nl/zwemwater/</li> 
-    <li>Introductie - PDOK. (z.d.). https://www.pdok.nl/introductie/-/article/zwemwater-provinciaal-en-rijkswateren-</li>
+       <li>Lijnen | GVB. (n.d.). <i>Reisinformatie GVB.</i>https://reisinfo.gvb.nl/nl/lijnen?boat&show</li>    
+      <li>PDOK. (n.d.). <i>Vaarweg informatie Nederland.</i> https://www.pdok.nl/atom-downloadservices/-/article/vaarweg-informatie-nederland-vin-</li>   
+      <li>Gemeente Amsterdam. (n.d.). <i>Op- en afstapplaatsen & ligplaatsen passagiersvaartuigen.</i> https://maps.amsterdam.nl/varen/</li>   
+      <li>Data en informatie. (n.d.). <i>Data en informatie Amsterdam.</i> https://data.amsterdam.nl/data/</li>  
+    <li>Onderzoek Amsterdam (n.d.).<i>Water in Amsterdam.</i> https://onderzoek.amsterdam.nl/dataset/water-in-amsterdam</li> 
+    <li>Gemeente Amsterdam (n.d.). <i>Zwem- en speelwater.</i> https://maps.amsterdam.nl/zwemwater/</li> 
+    <li>PDOK. (n.d.). https://www.pdok.nl/introductie/-/article/zwemwater-provinciaal-en-rijkswateren-</li>
     </ul>	
 
         
