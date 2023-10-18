@@ -13,3 +13,4 @@ max_value = df[column1].max()
 
 print(f"Minimum value in {column1} : {min_value}")
 print(f"Maximum value in {column1} : {max_value}")
+
